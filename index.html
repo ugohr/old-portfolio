@@ -20,11 +20,57 @@
         <link rel="stylesheet" media="screen and (max-width: 800px)" href="./css/home.phone.css" />
     </head>
 
-    <body class="container">
+    <body id="container">
         <div class="name">UGO H.</div>
         <div class="content-left">
             <div class="title">
-                Développeur <p id="language">PHP</p>
+                Développeur <p id="language">Full-Stack</p>
+            </div>
+
+            <div class="star">
+                <svg class="star-svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z" />
+                </svg>
+            </div>
+            <div class="star">
+                <svg class="star-svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z" />
+                </svg>
+            </div>
+            <div class="star">
+                <svg class="star-svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z" />
+                </svg>
+            </div>
+            <div class="star">
+                <svg class="star-svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z" />
+                </svg>
+            </div>
+            <div class="star">
+                <svg class="star-svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z" />
+                </svg>
+            </div>
+            <div class="star">
+                <svg class="star-svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z" />
+                </svg>
+            </div>
+            <div class="star">
+                <svg class="star-svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z" />
+                </svg>
+            </div>
+            <div class="star">
+                <svg class="star-svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z" />
+                </svg>
+            </div>
+            <div class="star">
+                <svg class="star-svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z" />
+                </svg>
             </div>
         </div>
         <div class="content-right">
@@ -44,22 +90,26 @@
 
         <script type="text/javascript">
             var languages = [
+                'Full-Stack',
                 'PHP',
                 'Laravel',
-                'HTML/CSS',
+                'HTML5',
+                'CSS',
                 'Back-End',
                 'SQL',
                 'React Native',
-                'Javascript',
-                'Front-End'
+                'JavaScript',
+                'Front-End',
+                'Mobile'
             ];
 
             var i = 1;
-            var hue = 180;
+            var hue = 24;
             var up = true;
 
             changeLanguage();
             changeHue();
+            showStar();
 
             function changeLanguage() {
                 if (i >= languages.length)
@@ -72,16 +122,52 @@
             }
 
             function changeHue() {
-                if (up && hue > 250)
+                if (up && hue > 129)
                     up = false;
-                else if (!up && hue < 180)
+                else if (!up && hue < 1)
                     up = true;
                 setTimeout(function () {
                     document.getElementById('hue').style.backdropFilter = 'hue-rotate('+hue+'deg)';
                     document.getElementById('hue').style.webkitBackdropFilter = 'hue-rotate('+hue+'deg)';
                     up ? hue++ : hue--;
                     changeHue();
-                }, 100);
+                }, 120);
+            }
+
+            function showStar() {
+                let stars = document.getElementsByClassName('star');
+                let starsSvg = document.getElementsByClassName('star-svg');
+
+                setTimeout(function () {
+                    for (let j = 0; j < stars.length; j++) {
+
+                        randTop = Math.floor(Math.random() * Math.floor(35));
+                        randLeft = Math.floor(Math.random() * Math.floor(100));
+
+                        stars[j].style.top = randTop+'vh';
+                        stars[j].style.left = randLeft+'vw';
+
+                        setTimeout(() => {
+                            starsSvg[j].classList.add('active');
+                        }, 150 * j);
+                    }
+
+                    hideStar();
+                }, 1500);
+            }
+
+            function hideStar() {
+                let starsSvg = document.getElementsByClassName('star-svg');
+
+                setTimeout(function () {
+                    for (let j = 0; j < starsSvg.length; j++) {
+                        setTimeout(() => {
+                            starsSvg[j].classList.remove('active');
+                        }, 150 * j);
+                    }
+
+                    showStar();
+                }, 1500);
             }
         </script>
     </body>

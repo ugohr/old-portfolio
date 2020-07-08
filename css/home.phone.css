@@ -5,12 +5,12 @@ html, body {
     margin: 0;
 }
 
-.container {
+#container {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-    background: linear-gradient(to top right, #D49384, #CFD3CA);
+    background: linear-gradient(165deg, #74ACFE, #D4C9E6, #EEE6DF);
 }
 
 .name {
@@ -43,7 +43,7 @@ html, body {
 	font-size: 45px;
 	font-weight: 800;
 	color: #FFF;
-	margin-bottom: 5vh;
+	margin-bottom: 0vh;
 	margin-left: 2vw;
 }
 .content-left .title p {
@@ -51,6 +51,19 @@ html, body {
 	color: transparent;
 	margin: 0;
 	font-size: 48px;
+}
+.star {
+	position: absolute;
+	color: #FFF;
+}
+.star-svg {
+	width: 8px;
+	height: 8px;
+	transform: scale(0);
+	transition: 0.2s;
+}
+.star-svg.active {
+	transform: scale(1);
 }
 
 .contact-text, .contact-btn {
@@ -83,11 +96,11 @@ html, body {
 }
 
 #hue {
-	backdrop-filter: hue-rotate(179deg);
-	-webkit-backdrop-filter: hue-rotate(179deg);
-	width: 60vw;
-	height: 30vh;
+	backdrop-filter: hue-rotate(24deg);
+	-webkit-backdrop-filter: hue-rotate(24deg);
+	width: 65vw;
+	height: 27vh;
 	position: absolute;
 	top: 20px;
-	right: 30px;
+	right: 20px;
 }
