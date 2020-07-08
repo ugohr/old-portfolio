@@ -4,7 +4,6 @@ html, body {
     font-weight: 500;
     margin: 0;
 }
-
 #container {
 	width: 100vw;
 	height: 100vh;
@@ -52,24 +51,11 @@ html, body {
 	margin: 0;
 	font-size: 48px;
 }
-.star {
-	position: absolute;
-	color: #FFF;
-}
-.star-svg {
-	width: 8px;
-	height: 8px;
-	transform: scale(0);
-	transition: 0.2s;
-}
-.star-svg.active {
-	transform: scale(1);
-}
 
 .contact-text, .contact-btn {
 	font-size: 30px;
 	font-style: italic;
-	-webkit-text-stroke: 1px #FFF;
+	-webkit-text-stroke: 1.5px #FFF;
 	color: transparent;
 	height: 25px;
 }
@@ -77,7 +63,6 @@ html, body {
 	margin-top: 0vh;
 	margin-left: 18vw;
 }
-
 .contact-btn {
 	background-color: transparent;
 	color: #FFF;
@@ -94,7 +79,22 @@ html, body {
 	left: 50%;
 	color: #FFF;
 }
-
+.star {
+	position: absolute;
+	color: #FFF;
+}
+.star:nth-of-type(n+6) {
+	display: none;
+}
+.star-svg {
+	width: 8px;
+	height: 8px;
+	transform: scale(0);
+	transition: 0.2s;
+}
+.star-svg.active {
+	transform: scale(1);
+}
 #hue {
 	backdrop-filter: hue-rotate(24deg);
 	-webkit-backdrop-filter: hue-rotate(24deg);

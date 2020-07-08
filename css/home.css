@@ -4,7 +4,6 @@ html, body {
     font-weight: 500;
     margin: 0;
 }
-
 #container {
 	width: 100vw;
 	height: 100vh;
@@ -43,7 +42,7 @@ html, body {
 	font-size: 100px;
 	font-weight: 800;
 	color: #FFF;
-	margin-top: 12vh;
+	margin-top: 4vh;
 	margin-left: 5vw;
 }
 .content-left .title p {
@@ -52,24 +51,11 @@ html, body {
 	margin: 0;
 	font-size: 110px;
 }
-.star {
-	position: absolute;
-	color: #FFF;
-}
-.star-svg {
-	width: 10px;
-	height: 10px;
-	transform: scale(0);
-	transition: 0.2s;
-}
-.star-svg.active {
-	transform: scale(1);
-}
 
 .contact-text, .contact-btn {
 	font-size: 64px;
 	font-style: italic;
-	-webkit-text-stroke: 1px #FFF;
+	-webkit-text-stroke: 1.5px #FFF;
 	color: transparent;
 	height: 50px;
 }
@@ -77,7 +63,6 @@ html, body {
 	margin-top: 40vh;
 	margin-left: 7vw;
 }
-
 .contact-btn {
 	background-color: transparent;
 	color: #FFF;
@@ -94,7 +79,19 @@ html, body {
 	left: 50%;
 	color: #FFF;
 }
-
+.star {
+	position: absolute;
+	color: #FFF;
+}
+.star-svg {
+	width: 10px;
+	height: 10px;
+	transform: scale(0);
+	transition: 0.2s;
+}
+.star-svg.active {
+	transform: scale(1);
+}
 #hue {
 	backdrop-filter: hue-rotate(24deg);
 	-webkit-backdrop-filter: hue-rotate(24deg);
