@@ -1,0 +1,93 @@
+html, body {
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    margin: 0;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+    background: linear-gradient(to top right, #D49384, #CFD3CA);
+}
+
+.name {
+	position: absolute;
+	top: -70px;
+	right: 4vw;
+	font-size: 200px;
+	font-weight: 900;
+	color: transparent;
+	-webkit-text-stroke: 2px #FFF;
+}
+
+.content-left {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 50%;
+	height: 100%;
+}
+.content-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 100%;
+}
+.content-left .title {
+	font-size: 100px;
+	font-weight: 800;
+	color: #FFF;
+	margin-top: 12vh;
+	margin-left: 5vw;
+}
+.content-left .title p {
+	-webkit-text-stroke: 1px #FFF;
+	color: transparent;
+	margin: 0;
+	font-size: 110px;
+}
+
+.contact-text, .contact-btn {
+	font-size: 64px;
+	font-style: italic;
+	-webkit-text-stroke: 1px #FFF;
+	color: transparent;
+	height: 50px;
+}
+.first-contact {
+	margin-top: 40vh;
+	margin-left: 8vw;
+}
+
+.contact-btn {
+	background-color: transparent;
+	color: #FFF;
+	font-weight: 800;
+	text-decoration: none;
+}
+.contact-btn:hover {
+	font-weight: 900;
+}
+
+.github {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	color: #FFF;
+}
+
+#hue {
+	backdrop-filter: hue-rotate(179deg);
+	-webkit-backdrop-filter: hue-rotate(179deg);
+	width: 50vw;
+	height: 45vh;
+	position: absolute;
+	top: 50px;
+	right: 50px;
+}
