@@ -1,6 +1,6 @@
 $(function () {
 
-	const ELEMENTS = ['FEU', 'PLANTE', 'SOL', 'FOUDRE', 'EAU'];
+	const ELEMENTS = ['🔥', '🍀', '🪨', '⚡️', '💧'];
 
 	/* TYPES DE CARTES
 	 * 0 = CHIFFRE 80%
@@ -10,7 +10,7 @@ $(function () {
 	 * 4 = +4 2%
 	 * 5 = CHANGEMENT ELEMENTAIRE 3%
 	*/
-	const TYPES = ['CHIFFRE', 'CHANGEMENT DE SENS', 'PASSEMENT DE TOUR', '+2', '+4', 'CHANGEMENT ELEMENTAIRE'];
+	const TYPES = ['CHIFFRE', '⤾', 'Ø', '+2', '+4', '🔥/🍀/🪨/⚡️/💧'];
 
 	$('#pioche').click(function () {
 
@@ -22,7 +22,11 @@ $(function () {
 		if (cardType === 0)
 			cardNumber = getIntBetween(0, 10);
 
-		$('.cards').append('<div class="card" onclick="this.parentNode.removeChild(this)">'+ (cardType === 0 ? cardNumber : TYPES[cardType]) +' '+ cardElement +'</div>');
+		let card = document.createElement('div');
+		$(card).addClass('card '+cardElement.toLowerCase()).attr('onclick', 'this.parentNode.removeChild(this)');
+		$(card).append((cardType === 0 ? cardNumber : TYPES[cardType]) +' '+ cardElement);
+
+		$('.cards').append($(card));
 
 	});
 
