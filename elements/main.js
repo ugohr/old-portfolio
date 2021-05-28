@@ -1,16 +1,16 @@
 $(function () {
 
-	const ELEMENTS = ['🔥', '🍀', '🪨', '⚡️', '💧'];
+	const ELEMENTS = ['🔥', '🍀', '⛰️', '⚡️', '💧'];
 
 	/* TYPES DE CARTES
-	 * 0 = CHIFFRE 80%
+	 * 0 = CHIFFRE 75%
 	 * 1 = CHANGEMENT DE SENS 5%
-	 * 2 = PASSEMENT DE TOUR 5%
-	 * 3 = +2 5%
-	 * 4 = +4 2%
-	 * 5 = CHANGEMENT ELEMENTAIRE 3%
+	 * 2 = PASSEMENT DE TOUR 7%
+	 * 3 = +2 6%
+	 * 4 = +4 3%
+	 * 5 = CHANGEMENT ELEMENTAIRE 4%
 	*/
-	const TYPES = ['CHIFFRE', '⤾', 'Ø', '+2', '+4', '🔥/🍀/🪨/⚡️/💧'];
+	const TYPES = ['CHIFFRE', '⤾', 'Ø', '+2', '+4', '🔥/🍀/⛰️/⚡️/💧'];
 
 	$('#pioche').click(function () {
 
@@ -24,7 +24,8 @@ $(function () {
 
 		let card = document.createElement('div');
 		$(card).addClass('card '+cardElement.toLowerCase()).attr('onclick', 'this.parentNode.removeChild(this)');
-		$(card).append((cardType === 0 ? cardNumber : TYPES[cardType]) +' '+ cardElement);
+		$(card).append('<p class="card-value">'+ (cardType === 0 ? cardNumber : TYPES[cardType]) +'</p>');
+		$(card).append('<p class="card-value">'+ cardElement +'</p>');
 
 		$('.cards').append($(card));
 
@@ -33,15 +34,15 @@ $(function () {
 	function getCardType() {
 		let n = getIntBetween(0, 100);
 
-		if (n < 80)
+		if (n < 75)
 			return 0
-		else if (n < 85)
+		else if (n < 80)
 			return 1
-		else if (n < 90)
+		else if (n < 87)
 			return 2
-		else if (n < 95)
+		else if (n < 93)
 			return 3
-		else if (n < 97)
+		else if (n < 96)
 			return 4
 		else if (n < 100)
 			return 5
