@@ -15,7 +15,7 @@ $(function () {
 	 * 9 = MIROIR 1.4%
 	 * 10 = QUITTE OU DOUBLE 0.5%
 	*/
-	const TYPES = ['', '🔄', '⛔️', '+1 GÉNÉRAL', '+2', '+3 GÉNÉRAL', '+4', '+8', '🔥🍀⛰️⚡️💧', '🪞', '🎲'];
+	const TYPES = ['', '🔄', '⛔️', '+1 GÉN.', '+2', '+3 GÉN.', '+4', '+8', '🔥🍀⛰️⚡️💧', '🔎', '🎲'];
 
 	$('#pioche').click(function () {
 
@@ -25,7 +25,7 @@ $(function () {
 			cardElement = ELEMENTS[Math.floor(getIntBetween(0, 5))];
 
 		let card = document.createElement('div');
-		$(card).addClass('card '+cardElement.toLowerCase()).attr('onclick', 'this.parentNode.removeChild(this)');
+		$(card).addClass('card').attr('onclick', 'this.parentNode.removeChild(this)');
 		$(card).append('<p class="card-value">'+ TYPES[cardType] +'</p>');
 		$(card).append('<p class="card-value">'+ cardElement +'</p>');
 
